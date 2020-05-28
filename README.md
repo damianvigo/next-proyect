@@ -1,2 +1,2 @@
 # next-proyect
-Prácticando en framework SSR basado en React
+App de Usuarios con framework SSR basado en React
