@@ -1,23 +1,28 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
-import fetch from 'isomorphic-fetch';
-import Users from '../components/Users';
+import HeroImage from '../components/HeroImage';
+import Header from '../components/Header';
+import HamburguerButton from '../components/HamburguerButton';
+import ScrollTop from '../components/ScrollTop';
+import { SobreMi } from '../components/SobreMi';
+import { ProyectsHome } from '../components/ProyectsHome';
+import Footer from '../components/Footer';
 
 const Index = (props) => {
   return (
     <Layout>
       <Head>
-        <title>Next.js Proyect - HOME</title>
+        <title>Porfolio Damián Vigo</title>
       </Head>
-      <h1>Next</h1>
-      <Users users={props.users} />
+      <HeroImage />
+      <Header />
+      <HamburguerButton />
+      <ScrollTop />
+      <SobreMi />
+      <ProyectsHome />
+      <Footer />
     </Layout>
   );
 };
 
-Index.getInitialProps = async (ctx) => {
-  const res = await fetch('https://reqres.in/api/users');
-  const resJSON = await res.json();
-  return { users: resJSON.data };
-};
 export default Index;

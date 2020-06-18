@@ -1,0 +1,192 @@
+@import './global.scss';
+
+.main {
+  padding: 50px 0;
+}
+
+.perfil {
+  width: 100vw;
+  margin: 0px auto;
+  padding: 50px 0;
+  body.dark & {
+    background: $color-variant;
+    &__title-me {
+      color: $color-light;
+    }
+    &__description-me {
+      color: $color-light;
+    }
+    &__text-me {
+      color: $color-light;
+    }
+  }
+  @include box;
+  &__title-me {
+    text-align: center;
+    padding: 40px 0;
+    @include title($Font2);
+  }
+  &__description-me {
+    width: 75%;
+    margin: 0 auto;
+    padding: 30px 0;
+    text-align: center;
+  }
+  &__text-me {
+    width: 50%;
+    margin: 0 auto;
+    line-height: 1.56em;
+    text-align: center;
+    @include title($Font1);
+  }
+}
+
+.skills {
+  padding-bottom: 50px;
+  body.dark & {
+    background: $color-variant;
+    &__title {
+      color: $color-light;
+    }
+    .skills-container {
+      color: $color-light;
+    }
+  }
+  @include box-green-light;
+  &__title {
+    @include title($Font2);
+    text-align: center;
+    padding-top: 90px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.skills-container {
+  width: 50%;
+  margin: 50px auto 0;
+  padding: 20px;
+
+  li {
+    position: relative;
+    list-style: none;
+    margin: 50px 0;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  li:before {
+    content: '';
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: rgba(54, 126, 223, 0.5);
+    border-radius: 1000px;
+  }
+
+  li:after {
+    content: '';
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 0%;
+    height: 15px;
+    background-color: rgba(54, 126, 223, 1);
+    border-radius: 1000px;
+    animation-duration: 0.7s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  }
+
+  li.html:after {
+    animation-name: html;
+  }
+  @keyframes html {
+    to {
+      width: 70%;
+    }
+  }
+
+  li.css:after {
+    animation-name: css;
+  }
+  @keyframes css {
+    to {
+      width: 65%;
+    }
+  }
+
+  li.js:after {
+    animation-name: js;
+  }
+  @keyframes js {
+    to {
+      width: 60%;
+    }
+  }
+
+  li.angular:after {
+    animation-name: angular;
+  }
+  @keyframes angular {
+    to {
+      width: 45%;
+    }
+  }
+
+  li.react:after {
+    animation-name: react;
+  }
+  @keyframes react {
+    to {
+      width: 60%;
+    }
+  }
+
+  li.next:after {
+    animation-name: next;
+  }
+  @keyframes next {
+    to {
+      width: 60%;
+    }
+  }
+
+  li.vue:after {
+    animation-name: vue;
+  }
+  @keyframes vue {
+    to {
+      width: 45%;
+    }
+  }
+}
+
+.cite-container {
+  padding-bottom: 90px;
+  padding-top: 90px;
+  width: 100vw;
+  &__cite {
+    background: url('/static/images/connect-background-white.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__davinci {
+    color: $color-variant;
+    text-align: center;
+    width: 100%;
+    font-size: 1.56em;
+    line-height: 1.56em;
+    font-family: $Font2;
+  }
+}

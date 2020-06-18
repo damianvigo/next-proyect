@@ -1,0 +1,143 @@
+@import './global.scss';
+
+.main-title-proyects {
+  &__title {
+    margin-bottom: 5.625em;
+    body.dark & {
+      background: $color-variant;
+      color: $color-light;
+    }
+    text-align: center;
+    @include title($Font2);
+    @include box;
+  }
+}
+
+.main-proyects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  body.dark & {
+    color: $color-light;
+    background: $color-variant;
+    &__container {
+      background: $sombraLight;
+    }
+    &__description {
+      color: $color-light;
+    }
+    &__repo--git {
+      color: $color-light;
+    }
+    &__repo--globe {
+      color: $color-light;
+    }
+  }
+
+  &__container {
+    margin: 40px 0;
+    text-align: center;
+    flex: 0 0 50%;
+  }
+  &__description {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 50%;
+    line-height: 1.25em;
+  }
+  &__mockup {
+    width: 100%;
+  }
+  &__thumbnail {
+    width: 100%;
+    margin: 0 auto;
+  }
+  &__img {
+    cursor: pointer;
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__flex-order-1 {
+    order: 1;
+  }
+  &__repo--git {
+    margin-right: 10px;
+    @include proyect-icon;
+  }
+  &__repo--globe {
+    @include proyect-icon;
+  }
+}
+
+.container-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4.37em;
+}
+
+.button {
+  border: none;
+  display: block;
+  position: relative;
+  padding: 0.5em 2.2em;
+  font-size: 1.56em;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  color: royalblue;
+  overflow: hidden;
+  body.dark & {
+    color: $color-light;
+  }
+  &:hover {
+    color: #fff;
+  }
+  &__span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border: 5px solid royalblue;
+    body.dark & {
+      border: 5px solid $color-variant;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      width: 8%;
+      height: 700%;
+      background: white;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-60deg);
+      transition: all 0.3s;
+      body.dark & {
+        background: $color-primary;
+      }
+    }
+  }
+}
+
+.button:hover .button__span::before,
+.button:focus .button__span::before {
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 100%;
+  background: royalblue;
+  body.dark & {
+    background: $color-variant;
+  }
+}
+
+.button:hover,
+.button:focus {
+  color: #fff;
+}

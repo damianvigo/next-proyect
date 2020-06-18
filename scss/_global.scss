@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+$Font1: 'Quicksand', sans-serif;
+$Font2: 'Lato', sans-serif;
+$color-primary: #666;
+$color-light: #fff;
+$color-secundary: #e9f3d9;
+$color-variant: #333;
+$color-dark: #000;
+$color-boton: #367edf;
+$modal-color: rgba(34, 34, 34, 0.85);
+$sombraDark: 10px 10px 20px rgba(170, 170, 170, 0.16);
+$sombraLight: 10px 10px 20px rgba(0, 0, 0, 0.16);
+
+@mixin proyect-icon {
+  display: inline-block;
+  font-size: 1.56em;
+  color: $color-variant;
+  margin-top: 0.93rem;
+  opacity: 0.5;
+  margin-left: 0.625rem;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// ej: @include box
+@mixin box {
+  -webkit-box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 5px 9px rgba(0, 0, 0, 0.1);
+  color: $color-primary;
+  background-color: $color-light;
+  padding: 90px;
+}
+
+@mixin box-green-light {
+  box-shadow: 20px 20px 13px 0px rgba(0, 0, 0, 0.2);
+  color: $color-primary; // lineamiento de codigo - variables ultimo
+  background-color: $color-secundary;
+}
+
+// ej @include title($Font1);
+@mixin title($font) {
+  @if $font==$Font1 {
+    font-family: $Font1;
+    font-size: 1em;
+  } @else {
+    font-family: $Font2;
+    font-size: 1.5625em;
+    text-transform: uppercase;
+    letter-spacing: 0.43em;
+    color: $color-primary;
+    text-align: center;
+  }
+}
+
+// ej: color: get-opacity($color-primary, .5);
+// ej; border: 2px solid get-opacity($color-light, .5);
+@function get-opacity($color, $nivel) {
+  @return rgba($color, $nivel);
+}
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 60%;
+  margin: 1.25em auto;
+}
+
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  @include title($Font1);
+  overflow-x: hidden;
+  transition: 0.3s ease all;
+  color: $color-light;
+  &.dark {
+    background: $color-primary;
+  }
+}
+
+p {
+  color: $color-variant;
+}
+
+.full-width {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1000;
+  &.active {
+    display: flex;
+  }
+  &__container-img {
+    position: relative;
+  }
+  &__img {
+    max-width: 100%;
+  }
+  #btn-cerrar-popup {
+    background: none;
+    font-size: 1.25em;
+    color: $color-light;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    right: -1.25rem;
+    top: -1.25rem;
+  }
+  &__description {
+    display: block;
+    background: $color-light;
+    padding: 1.25em;
+    text-align: center;
+    margin-top: 0.31em;
+    border-radius: 6.87em;
+    max-width: 40%;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}

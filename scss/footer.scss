@@ -1,0 +1,69 @@
+@import './global.scss';
+
+.footer {
+  background-color: $color-secundary;
+  width: 100%;
+  padding: 1.25em;
+  body.dark & {
+    background: $color-variant;
+    box-shadow: $sombraLight;
+    p {
+      color: $color-light;
+    }
+  }
+  &__social-network {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25em;
+    flex-wrap: wrap;
+  }
+  &__fb,
+  &__platzi,
+  &__github {
+    display: block;
+    width: 3.75em;
+    height: 3.75em;
+    color: #fff;
+    margin: 1.25em;
+    text-align: center;
+    border-radius: 6.25em;
+    transition: 0.3s ease all;
+    i {
+      font-size: 1.5em;
+      line-height: 2.5em;
+    }
+  }
+  &__fb {
+    background-color: #3b5998;
+  }
+  &__github {
+    background-color: $color-primary;
+    body.dark & {
+      background: $color-dark;
+      color: $color-light;
+    }
+  }
+  &__platzi {
+    background-color: #6cc644;
+  }
+  &__container-icon {
+    &:hover a {
+      animation: icono 0.5s ease;
+    }
+    @keyframes icono {
+      from {
+        transform: rotate3d(0, 0, 0, 0);
+      }
+      to {
+        transform: rotate3d(0, 1, 0, 360deg); // y - x - z
+      }
+    }
+  }
+  &__author {
+    margin-bottom: 2.5em;
+    text-align: center;
+    color: $color-variant;
+    @include title($Font1);
+  }
+}
