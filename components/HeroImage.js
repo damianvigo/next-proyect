@@ -8,7 +8,7 @@ const HeroImage = () => {
           <h1 class='hero-image__title'>Hola, soy Damián Vigo</h1>
           <h2 class='hero-image__subtitle'>Desarrollador Web</h2>
           <figure class='hero-image__img-perfil'>
-            <img class='hero-image__img-perfil--img' src='./img/yo.jpg' alt='' />
+            <img class='hero-image__img-perfil--img' src='../static/images/yo.jpg' alt='' />
           </figure>
         </div>
       </div>

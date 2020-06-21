@@ -9,7 +9,7 @@ export const SobreMi = () => {
           <p class='perfil__text-me'>
             ¡Hola! 👋 <br /> <strong>Me llamo Damián Vigo y soy Frontend Developer de Buenos Aires Argentina.</strong>
             <br />
-            Actualmente me encuentro mejorando mis conocimientos en tecnologías <em>frontend</em>y aprendiendo algunas cosas sobre
+            Actualmente me encuentro mejorando mis conocimientos en tecnologías <em>frontend</em> y aprendiendo algunas cosas sobre
             <em>backend.</em>
             Apasionado por la tecnología, el código, el deporte y el diseño.
           </p>

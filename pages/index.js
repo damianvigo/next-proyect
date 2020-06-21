@@ -1,4 +1,6 @@
+// import components
 import Head from 'next/head';
+import DocumentLoaded from '../components/Document';
 import Layout from '../components/Layout';
 import HeroImage from '../components/HeroImage';
 import Header from '../components/Header';
@@ -7,6 +9,7 @@ import ScrollTop from '../components/ScrollTop';
 import { SobreMi } from '../components/SobreMi';
 import { ProyectsHome } from '../components/ProyectsHome';
 import Footer from '../components/Footer';
+import '../scss/mediaqueries.scss';
 
 const Index = (props) => {
   return (
@@ -20,6 +23,7 @@ const Index = (props) => {
       <ScrollTop />
       <SobreMi />
       <ProyectsHome />
+      <DocumentLoaded />;
       <Footer />
     </Layout>
   );
